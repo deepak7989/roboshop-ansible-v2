@@ -1,0 +1,11 @@
+- name: instrall mysql
+  package:
+    name: mysql-server
+    state: present
+- name: start and enable
+  service:
+    state: started
+    enabled: yes
+    name: mysqld
+- name: setup root password
+  command: mysql_secure_installation --set-root-pass "{{ MYSQL_ROOT_PASSWORD }}"
