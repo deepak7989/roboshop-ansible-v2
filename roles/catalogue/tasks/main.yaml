@@ -42,7 +42,7 @@
     masked: false
 
 - name: enable and start catalogue
-  service:
+  systemd_service:
     name: catalogue
     state: restarted
     enabled: yes
